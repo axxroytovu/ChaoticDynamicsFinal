@@ -19,4 +19,8 @@ for i in tqdm(xrange(1000000)):
     y.append(yn)
 
 plt.plot(x[::100], y[::100], 'k.', rasterized=True)
-plt.show()
+plt.grid()
+plt.xlabel('X')
+plt.ylabel('Y')
+plt.title('Henon Map')
+plt.savefig('P3.png', format='png', dpi=300)
