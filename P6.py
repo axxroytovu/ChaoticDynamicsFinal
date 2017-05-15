@@ -43,7 +43,7 @@ def Vectorized(Function, xmin, xmax, ymin, ymax):
         Complex[np.abs(Complex) > 10] = 0
         show[show == 0] = showx[show == 0]
     plt.imshow(show, cmap="Greys_r", clim=[0, 1], extent=[xmin, xmax, ymin, ymax], origin='lower')
-    plt.show()
+    plt.savefig('P6.png', format='png', dpi=300)
     
 def NonVector(Function, min, max):
     xr = np.linspace(min, max, 2000)
@@ -70,5 +70,5 @@ def NonVector(Function, min, max):
     plt.imshow(show, cmap="Greys", clim=[0,1], extent=[min, max, min, max], origin='lower')
     plt.show()
 
-for FN in [Squared]:
-    Vectorized(FN, -0.2, 0.0, -0.3, -0.1)
+for FN in [Offset]:
+    Vectorized(FN, -2, 2, -2, 2)
